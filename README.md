@@ -22,7 +22,7 @@ El objetivo del proyecto es crear una página web utilizando tecnologías básic
   
 ## Página principal
 
-<img width="1818" height="912" alt="Captura2" src="https://github.com/user-attachments/assets/c708be02-6dfd-45a8-a3c9-34e00db690e9" />
+<img width="1876" height="917" alt="image" src="https://github.com/user-attachments/assets/3e669c08-c445-4a51-8d6f-b847597c0536" />
 
 ## Otra vista del proyecto
 
