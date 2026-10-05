@@ -1,75 +1,122 @@
 
-        // boton de filtrar de proyectos
-            const botonfiltrar = document.querySelectorAll('.filtro');
-            const proyectos = document.querySelectorAll('.tarjeta-proyecto');
-            botonfiltrar.forEach((boton) => {
-                boton.addEventListener('click', () => {
-            const filtroSeleccionado = boton.dataset.filtro;
-                    proyectos.forEach((proyecto) => {
-                const categoriaProyecto = proyecto.dataset.categoria;
-                if(filtroSeleccionado === 'todos'){
-                    proyecto.style.display = 'block';
-                }else if(categoriaProyecto === filtroSeleccionado){
-                    proyecto.style.display = 'block';
-                }else{
-                    proyecto.style.display = 'none';
-                }
+/* FILTRO DE PROYECTOS */
 
-                    });
-                });
-            });
+const botonesFiltro = document.querySelectorAll(".filtro");
+const proyectos = document.querySelectorAll(".tarjeta-proyecto");
 
+botonesFiltro.forEach((boton) => {
+    boton.addEventListener("click", () => {
+        const filtroSeleccionado = boton.dataset.filtro;
+        proyectos.forEach((proyecto) => {
+            const categoriaProyecto = proyecto.dataset.categoria;
+            const coincide =
+                filtroSeleccionado === "todos" ||
+                categoriaProyecto === filtroSeleccionado;
+            proyecto.style.display = coincide ? "block" : "none";
+        });
 
-        // buton para cambiar el tema
-        const tema = document.getElementById('btn-tema');
-        console.log(tema);
-        tema.addEventListener('click', () => {
+        /* Cambiar botón activo */
+
+        botonesFiltro.forEach((boton) => {
+            boton.classList.remove("activo");
+        });
+        boton.classList.add("activo");
+    });
+});
+
+/* CAMBIAR TEMA */
+
+const btnTema = document.getElementById("btn-tema");
+const iconoClaro = document.getElementById("icono-claro");
+const iconoOscuro = document.getElementById("icono-oscuro");
+
+if (btnTema) {
+    btnTema.addEventListener("click", () => {
+
+        /* Añadir o quitar modo oscuro */
+
+        const modoOscuro =
             document.body.classList.toggle("modo-oscuro");
-        });
 
+        /* Cambiar el icono activo */
 
-        // boton para cambiar el idioma
-        const btnIdioma = document.getElementById('btn-idioma');
+        if (modoOscuro) {
+            iconoClaro.classList.remove("activo");
+            iconoOscuro.classList.add("activo");
+            btnTema.setAttribute("aria-pressed", "true");
+        } else {
+            iconoOscuro.classList.remove("activo");
+            iconoClaro.classList.add("activo");
+            btnTema.setAttribute("aria-pressed", "false");
+        }
+    });
+}
 
-        const textos = document.querySelectorAll('[data-es]');
-        let idiomaIngles = false;
-        btnIdioma.addEventListener('click', () => {
+/* CAMBIAR IDIOMA */
 
-            if (idiomaIngles === false) {
+const btnIdioma = document.getElementById("btn-idioma");
+const textoIdioma = document.getElementById("texto-idioma");
+const banderaIdioma = document.getElementById("bandera-idioma");
+const textos = document.querySelectorAll("[data-es]");
+let idiomaIngles = false;
 
-                textos.forEach((texto) => {
-                    texto.textContent = texto.dataset.en;
-                });
+/* Función para aplicar el idioma */
 
-                idiomaIngles = true;
-                btnIdioma.textContent = "Español";
+function aplicarIdioma() {
+    textos.forEach((texto) => {
+        if (idiomaIngles) {
+            texto.textContent = texto.dataset.en;
+        } else {
+            texto.textContent = texto.dataset.es;
+        }
+    });
 
-            } else {
+    /* Cambiar texto del selector */
 
-                textos.forEach((texto) => {
-                    texto.textContent = texto.dataset.es;
-                });
+    if (textoIdioma) {
+        textoIdioma.textContent =
+            idiomaIngles ? "English" : "Español";
+    }
 
-                idiomaIngles = false;
-                btnIdioma.textContent = "English";
-            }
-        });
+    /* Cambiar bandera */
 
+    if (banderaIdioma) {
+        banderaIdioma.textContent =
+            idiomaIngles ? "🇬🇧" : "🇪🇸";
+    }
 
-        // boton para volver arriba
-        const btnArriba = document.getElementById('btn-arriba');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 200) {
-                console.log("He bajado");
-                btnArriba.style.display = 'block';
-            } else {
-                btnArriba.style.display = 'none';
-            }
-        });
+    /* Cambiar idioma del documento */
+    document.documentElement.lang =
+        idiomaIngles ? "en" : "es";
+}
 
-        btnArriba.addEventListener('click', () => {
+/* Detectar clic en idioma */
+
+if (btnIdioma) {
+    btnIdioma.addEventListener("click", () => {
+        idiomaIngles = !idiomaIngles;
+        aplicarIdioma();
+    });
+}
+
+/* BOTÓN VOLVER ARRIBA */
+
+const btnArriba = document.getElementById("btn-arriba");
+
+if (btnArriba) {
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            btnArriba.style.display = "block";
+        } else {
+            btnArriba.style.display = "none";
+        }
+    });
+
+    btnArriba.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth"
         });
     });
+}

@@ -3,43 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="index.css" />
+
     <title>Mi Portafolio | Loubna Houta</title>
   </head>
 
   <body>
     <!-- CABECERA -->
     <header class="headerPor">
+      <!-- LOGO -->
       <div class="logo">
         <img src="Lht.png" alt="Logo de Loubna Houta" class="logo-image" />
         <span>Loubna Houta</span>
       </div>
 
+      <!-- MENÚ -->
       <nav>
         <ul class="links">
-          <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
           <li>
-            <a href="#sobre-mi" data-es="Sobre mí" data-en="About Me"
-              >Sobre mí</a
-            >
+            <a href="#inicio" data-es="Inicio" data-en="Home"> Inicio </a>
           </li>
 
           <li>
-            <a href="#habilidades" data-es="Habilidades" data-en="Skills"
-              >Habilidades</a
-            >
+            <a href="#sobre-mi" data-es="Sobre mí" data-en="About Me">
+              Sobre mí
+            </a>
           </li>
 
           <li>
-            <a href="#formacion" data-es="Formación" data-en="Education"
-              >Formación</a
-            >
+            <a href="#habilidades" data-es="Habilidades" data-en="Skills">
+              Habilidades
+            </a>
           </li>
 
           <li>
-            <a href="#proyectos" data-es="Proyectos" data-en="Projects"
-              >Proyectos</a
-            >
+            <a href="#formacion" data-es="Formación" data-en="Education">
+              Formación
+            </a>
+          </li>
+
+          <li>
+            <a href="#proyectos" data-es="Proyectos" data-en="Projects">
+              Proyectos
+            </a>
           </li>
 
           <li>
@@ -47,22 +54,41 @@
               href="#conocimientos"
               data-es="Tecnologías"
               data-en="Technologies"
-              >Tecnologías</a
             >
+              Tecnologías
+            </a>
           </li>
 
           <li>
-            <a href="#contacto" data-es="Contacto" data-en="Contact"
-              >Contacto</a
-            >
+            <a href="#contacto" data-es="Contacto" data-en="Contact">
+              Contacto
+            </a>
           </li>
         </ul>
       </nav>
 
-      <button id="btn-tema" data-es="Cambiar Tema" data-en="Change Theme">
-        Cambiar Tema
-      </button>
-      <button id="btn-idioma" data-es="Inglés" data-en="English">Inglés</button>
+      <!-- CONTROLES -->
+      <div class="controles-header">
+        <button
+          id="btn-idioma"
+          class="selector-idioma"
+          type="button"
+          aria-label="Cambiar idioma"
+        >
+          <span id="texto-idioma">Español</span>
+        </button>
+
+        <button
+          id="btn-tema"
+          class="selector-tema"
+          type="button"
+          aria-label="Cambiar tema"
+          aria-pressed="false"
+        >
+          <span class="icono-tema activo" aria-hidden="true">☀</span>
+          <span class="icono-tema" aria-hidden="true">☾</span>
+        </button>
+      </div>
     </header>
 
     <!-- INICIO -->
@@ -74,6 +100,7 @@
       >
         Hola, soy Loubna :)
       </h1>
+
       <p
         data-es="Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM)"
         data-en="Multiplatform Applications Development (DAM) Student"
@@ -125,6 +152,7 @@
     <!-- HABILIDADES -->
     <section id="habilidades">
       <h2 data-es="Habilidades" data-en="Skills">Habilidades</h2>
+
       <ul>
         <li
           data-es="Programación en Java y PHP"
@@ -163,13 +191,15 @@
       <div class="formacion-grid">
         <div class="tarjeta-formacion">
           <h3 data-es="Bachillerato" data-en="High School">Bachillerato</h3>
+
           <p
             data-es="Institut Boussakour, Mezguitem (Marruecos)"
             data-en="Institut Boussakour, Mezguitem (Morocco)"
           >
             Institut Boussakour, Mezguitem (Marruecos)
           </p>
-          <span class="estado">2021 - 2023</span>
+
+          <span class="estado"> 2021 - 2023 </span>
         </div>
 
         <div class="tarjeta-formacion">
@@ -179,15 +209,17 @@
           >
             Desarrollo de Aplicaciones Multiplataforma (DAM)
           </h3>
+
           <p
             data-es="Institut Baix Camp, Reus"
             data-en="Institut Baix Camp, Reus"
           >
             Institut Baix Camp, Reus
           </p>
-          <span class="estado" data-es="En curso" data-en="In progress"
-            >En curso</span
-          >
+
+          <span class="estado" data-es="En curso" data-en="In progress">
+            En curso
+          </span>
         </div>
 
         <div class="tarjeta-formacion">
@@ -197,15 +229,17 @@
           >
             Desarrollo web con HTML, CSS y JavaScript
           </h3>
+
           <p
             data-es="Formación complementaria (en línea)"
             data-en="Complementary training (online)"
           >
             Formación complementaria (en línea)
           </p>
-          <span class="estado" data-es="En curso" data-en="In progress"
-            >En curso</span
-          >
+
+          <span class="estado" data-es="En curso" data-en="In progress">
+            En curso
+          </span>
         </div>
       </div>
     </section>
@@ -215,24 +249,44 @@
       <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
 
       <div class="filtros-proyectos">
-        <button class="filtro activo" data-filtro="todos">Todos</button>
-        <button class="filtro" data-filtro="web">Web</button>
-        <button class="filtro" data-filtro="programacion">Programación</button>
-      </div>
-      <div class="proyectos-grid">
-        <div class="tarjeta-proyecto" data-categoria="web">
-          <span class="etiqueta-categoria" data-es="Web" data-en="Web"
-            >Web</span
-          >
+        <button
+          class="filtro activo"
+          data-filtro="todos"
+          data-es="Todos"
+          data-en="All"
+        >
+          Todos
+        </button>
 
-          <h3 data-es="PaperShop" data-en="PaperShop">PaperShop</h3>
+        <button class="filtro" data-filtro="web" data-es="Web" data-en="Web">
+          Web
+        </button>
+
+        <button
+          class="filtro"
+          data-filtro="programacion"
+          data-es="Programación"
+          data-en="Programming"
+        >
+          Programación
+        </button>
+      </div>
+
+      <div class="proyectos-grid">
+        <!-- PAPERSHOP -->
+        <div class="tarjeta-proyecto" data-categoria="web">
+          <span class="etiqueta-categoria" data-es="Web" data-en="Web">
+            Web
+          </span>
+
+          <h3>PaperShop</h3>
 
           <p
-            data-es="Aplicación web desarrollada con PHP y Laravel para gestionar productos mediante operaciones CRUD."
-            data-en="Web application developed with PHP and Laravel to manage products using CRUD operations."
+            data-es="Aplicación web desarrollada con PHP y Laravel para gestionar productos mediante operaciones CRUD con APIs."
+            data-en="Web application developed with PHP and Laravel to manage products using CRUD operations with APIs."
           >
             Aplicación web desarrollada con PHP y Laravel para gestionar
-            productos mediante operaciones CRUD con API's.
+            productos mediante operaciones CRUD con APIs.
           </p>
 
           <div class="tags">
@@ -248,17 +302,20 @@
             href="https://github.com/loubna-26/Proyecto-API-PaperShop"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub ↗</a
           >
+            GitHub ↗
+          </a>
         </div>
 
+        <!-- DUNGEON QUEST -->
         <div class="tarjeta-proyecto" data-categoria="programacion">
           <span
             class="etiqueta-categoria"
             data-es="Programación"
             data-en="Programming"
-            >Programación</span
           >
+            Programación
+          </span>
 
           <h3 data-es="Dungeon Quest Nuevo" data-en="Dungeon Quest New">
             Dungeon Quest Nuevo
@@ -268,8 +325,8 @@
             data-es="Juego programado en equipo, con lógica de niveles y mecánicas propias."
             data-en="Game developed in a team, with level logic and own mechanics."
           >
-            Juego programado en equipo, con lógica de niveles y
-            mecánicaspropias.
+            Juego programado en equipo, con lógica de niveles y mecánicas
+            propias.
           </p>
 
           <div class="tags">
@@ -282,17 +339,20 @@
             href="https://github.com/loubna-26/P.PRO-DungeonQuest/tree/main/DungeonQuestNou"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub ↗</a
           >
+            GitHub ↗
+          </a>
         </div>
 
+        <!-- BIBLIOTECA -->
         <div class="tarjeta-proyecto" data-categoria="programacion">
           <span
             class="etiqueta-categoria"
             data-es="Programación"
             data-en="Programming"
-            >Programación</span
           >
+            Programación
+          </span>
 
           <h3 data-es="Gestión de Biblioteca" data-en="Library Management">
             Gestión de Biblioteca
@@ -316,8 +376,9 @@
             href="https://github.com/loubna-26/Projecte-Gestio-Biblioteca"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub ↗</a
           >
+            GitHub ↗
+          </a>
         </div>
       </div>
     </section>
@@ -328,21 +389,24 @@
 
       <ul>
         <li>
-          <b data-es="Lenguajes: " data-en="Languages: ">Lenguajes:</b>
+          <b data-es="Lenguajes: " data-en="Languages: "> Lenguajes: </b>
           Java, PHP, JavaScript
         </li>
+
         <li>
-          <b data-es="Desarrollo web: " data-en="Web development: "
-            >Desarrollo web:</b
-          >
+          <b data-es="Desarrollo web: " data-en="Web development: ">
+            Desarrollo web:
+          </b>
           HTML y CSS
         </li>
+
         <li>
-          <b data-es="Bases de datos: " data-en="Databases: "
-            >Bases de datos:</b
-          >
+          <b data-es="Bases de datos: " data-en="Databases: ">
+            Bases de datos:
+          </b>
           SQL, MySQL y PL/SQL
         </li>
+
         <li>
           <b
             data-es="Modelado y formatos de datos:"
@@ -350,26 +414,31 @@
           >
             Modelado y formatos de datos:
           </b>
+
           <span data-es="UML, XML y JSON" data-en="UML, XML and JSON">
             UML, XML y JSON
           </span>
         </li>
+
         <li>
-          <b data-es="Herramientas: " data-en="Tools: ">Herramientas: </b>
-          Visual Studio Code, Eclipse, draw.io, Postman y MySQLWorkbench
+          <b data-es="Herramientas: " data-en="Tools: "> Herramientas: </b>
+          Visual Studio Code, Eclipse, draw.io, Postman y MySQL Workbench
         </li>
+
         <li>
-          <b data-es="Control de versiones: " data-en="Version control: "
-            >Control de versiones: </b
-          >Git y GitHub
+          <b data-es="Control de versiones: " data-en="Version control: ">
+            Control de versiones:
+          </b>
+          Git y GitHub
         </li>
+
         <li>
           <b
             data-es="Herramienta relacionada con gestión empresarial y ERP:"
             data-en="Tool related to business management and ERP:"
           >
-            Herramienta relacionada con gestión empresarial y ERP:</b
-          >
+            Herramienta relacionada con gestión empresarial y ERP:
+          </b>
           Odoo
         </li>
       </ul>
@@ -412,7 +481,8 @@
             href="https://github.com/loubna-26"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub / loubna-26
+          >
+            GitHub / loubna-26
           </a>
         </li>
 
@@ -421,19 +491,21 @@
             href="https://www.linkedin.com/in/loubna-houta-00640430b/"
             target="_blank"
             rel="noopener noreferrer"
-            >LinkedIn / Loubna Houta
+          >
+            LinkedIn / Loubna Houta
           </a>
         </li>
 
         <li class="item-email">
-          <a href="mailto:loubnahouta26@gmail.com">loubnahouta26@gmail.com</a>
+          <a href="mailto:loubnahouta26@gmail.com"> loubnahouta26@gmail.com </a>
         </li>
       </ul>
     </section>
 
-    <button id="btn-arriba">↑</button>
+    <!-- BOTÓN SUBIR -->
+    <button id="btn-arriba" aria-label="Volver arriba">↑</button>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- FOOTER -->
     <footer>
       <p
         data-es="© 2026 Loubna Houta. Todos los derechos reservados."
