@@ -667,6 +667,15 @@ body.modo-oscuro {
   }
 }
 
+.footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: var(--color-medio);
+  color: var(--color-header);
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
