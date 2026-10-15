@@ -296,7 +296,7 @@ h3 {
 #habilidades ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
@@ -322,7 +322,7 @@ h3 {
 
 .formacion-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
@@ -380,7 +380,7 @@ h3 {
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -454,7 +454,7 @@ h3 {
 #conocimientos ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
@@ -469,7 +469,7 @@ h3 {
 
 #idiomas ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
   list-style: none;
 }
@@ -521,6 +521,10 @@ h3 {
 
 #contacto .item-email::before {
   background-image: url("Gmail.jpg");
+}
+
+#contacto .item-cv::before {
+  background-image: url("cv.png");
 }
 
 #contacto a {
@@ -660,5 +664,45 @@ body.modo-oscuro {
     width: 27px;
     height: 27px;
     font-size: 16px;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .headerPor {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 3rem 1.2rem;
+  }
+
+  #inicio {
+    padding: 4rem 1.2rem;
+  }
+
+  /* Foto centrada encima del texto */
+  #sobre-mi img {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem;
+  }
+
+  /* Filtros en varias líneas si no caben */
+  .filtros-proyectos {
+    flex-wrap: wrap;
+  }
+
+  .links a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
   }
 }
